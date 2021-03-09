@@ -30,7 +30,6 @@ public class BitcoinService {
         }
 
         System.out.println("Récupération du cours du bitcoin sur site distant");
-      //  WebPageManager webPageManager = new WebPageManager();
 
         String apiResponse = webPageManager.getPageContents("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR");
         apiResponse = apiResponse.replace("{\"EUR\":", "");
