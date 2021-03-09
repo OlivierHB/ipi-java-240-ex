@@ -12,9 +12,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        ApplicationContext ctx;
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
         // init conf JAVA
-        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+
 
         // ou init conf XML
         // ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -22,12 +22,11 @@ public class Main {
         // defined bean
         BitcoinService bitcoinService = ctx.getBean(BitcoinService.class);
         ProduitManager produitManager = ctx.getBean(ProduitManager.class);
-        WebPageManager webPageManager = ctx.getBean(WebPageManager.class);
 
-        produitManager.setWebPageManager(webPageManager);
+       /* produitManager.setWebPageManager(webPageManager);
         produitManager.setBitcoinService(bitcoinService);
 
-        bitcoinService.setWebPageManager(webPageManager);
+        bitcoinService.setWebPageManager(webPageManager);*/
 
         // ---------------------------INIT PGRM-----------------------------
 

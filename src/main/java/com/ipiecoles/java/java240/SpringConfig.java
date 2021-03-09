@@ -8,11 +8,10 @@ import org.springframework.context.annotation.Scope;
 public class SpringConfig {
 
     @Bean
-    @Scope(value = "singleton")
     public BitcoinService bitCoinService() {
         BitcoinService bitcoinService = new BitcoinService();
         bitcoinService.setWebPageManager(webPageManager());
-        return new BitcoinService();
+        return bitcoinService;
     }
 
     @Bean
